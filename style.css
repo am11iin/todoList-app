@@ -1,0 +1,126 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; transition: 0.4s;
+}
+
+/* Dark mode */
+body.dark {
+    background: #111;
+}
+
+.todo-container {
+    background-color: #fff;
+    width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+body.dark .todo-container {
+    background-color: #222;
+}
+
+.header {
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+#themeToggle {
+    background: transparent; border: none; font-size: 1.4rem; cursor: pointer;
+}
+
+.notification {
+    background: #27ae60;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+    animation: fadeNotif 0.4s ease;
+}
+@keyframes fadeNotif {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px; border: 1px solid #ccc;
+    outline: none; font-size: 1rem;
+}
+
+body.dark input, body.dark select {
+    background: #333; color: white; border: 1px solid #555;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    border: none; background: #2575fc; color: white;
+    padding: 12px; border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+button:hover { background: #6a11cb; }
+
+#searchInput {
+    width: 100%;
+    margin-top: 15px;
+}
+
+li {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #f0f0f0; margin-top: 10px; padding: 12px;
+    border-radius: 8px; position: relative;
+    transition: 0.3s; cursor: grab;
+}
+li:active {
+    cursor: grabbing;
+    transform: none !important;
+    scale: 1 !important;
+}
+
+body.dark li { background: #333; }
+
+li.done span { text-decoration: line-through; color: #888; }
+
+/* Priority colors */
+li.haute { border-left: 6px solid #e74c3c; }
+li.moyenne { border-left: 6px solid #f1c40f; }
+li.basse { border-left: 6px solid #2ecc71; }
+
+/* Category tags */
+.tag {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    margin-left: 10px;
+    color: white;
+}
+.tag.travail { background: #2980b9; }
+.tag.personnel { background: #8e44ad; }
+.tag.etude { background: #16a085; }
+
+.action-btns {
+    display: flex; gap: 20px;
+}
+
+.action-btns i {
+    cursor: pointer; font-size: 1.1rem;
+    transition: 0.3s;
+}
+.action-btns i:hover { transform: scale(1.2); }
+
+.filters {
+    margin-top: 15px; 
+}
+.filter-btn {
+    padding: 8px 15px; border-radius: 7px; background: #ddd; border: none;
+    cursor: pointer; transition: 0.3s;
+}
+.filter-btn.active, .filter-btn:hover { background: #2575fc; color: white; }

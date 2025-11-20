@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Amine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="todo-container">
+        
+        <div class="header">
+            <h1>To-Do List • Amine</h1>
+            <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+
+        <div class="notification" id="notif"></div>
+
+        <input type="text" id="searchInput" placeholder="Rechercher une tâche…">
+
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Ajouter une tâche...">
+            <select id="prioritySelect">
+                <option value="haute">Haute</option>
+                <option value="moyenne" selected>Moyenne</option>
+                <option value="basse">Basse</option>
+            </select>
+            <select id="categorySelect">
+                <option value="travail">Travail</option>
+                <option value="personnel">Personnel</option>
+                <option value="etude">Études</option>
+            </select>
+            <button id="addBtn">Ajouter</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Toutes</button>
+            <button class="filter-btn" data-filter="active">À faire</button>
+            <button class="filter-btn" data-filter="done">Faites</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
