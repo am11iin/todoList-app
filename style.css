@@ -124,3 +124,100 @@ li.basse { border-left: 6px solid #2ecc71; }
     cursor: pointer; transition: 0.3s;
 }
 .filter-btn.active, .filter-btn:hover { background: #2575fc; color: white; }
+
+/* ============================
+   📱 Responsive pour petits écrans
+   ============================ */
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #taskInput {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #addTaskBtn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    ul#taskList {
+        padding: 0;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .priority-tag {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Icônes plus grandes */
+    .actions i {
+        font-size: 1.3rem;
+    }
+}
+
+/* 📱 Très petits écrans (≤ 480px) */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    #taskInput {
+        font-size: 0.9rem;
+    }
+
+    #addTaskBtn {
+        font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+    }
+}
